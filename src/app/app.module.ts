@@ -13,11 +13,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatRadioModule} from '@angular/material/radio';
+import { ListMyProdutsComponent } from './pages/myProduct/list-my-produts/list-my-produts.component';
+import { FormDevolutionComponent } from './pages/devolution/form-devolution/form-devolution.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListMyProdutsComponent,
+    FormDevolutionComponent
   ],
   imports: [
     MatRadioModule,

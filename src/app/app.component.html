@@ -1,120 +1,15 @@
 <mat-toolbar>My App</mat-toolbar>
 <div class="container">
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
+    <mat-step [stepControl]="myProductsFormGroup">
       <ng-template matStepLabel>Escolha do produto</ng-template>
-
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
-        <div fxFlex="24.3">
-          <mat-card class="example-card">
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button matStepperNext>Devolver</button>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div fxFlex="24.3%">
-        </div>
-        <div fxFlex="24.3%">
-        </div>
-        <div fxFlex="24.3%">
-
-        </div>
-      </div>
-
+      <app-list-my-produts></app-list-my-produts>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
+    <mat-step [stepControl]="devolutionFormGroup">
       <ng-template matStepLabel>Formulário de devolução</ng-template>
-
-      <div class="row">
-        <div class="col col-md-6">
-          <mat-card class="example-card product">
-            <div class="row">
-              <div class="col col-md-6">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-              </div>
-
-              <div class="col col-md-6">
-                <mat-card-content>
-                  <h2>Product name</h2>
-                  <ul>
-                    <li>Fornecedor: ...</li>
-                    <li>Quantidade: ...</li>
-                    <li>Preço: ...</li>
-                  </ul>
-                  <p class="product-description">
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain.
-                  </p>
-                </mat-card-content>
-              </div>
-            </div>
-          </mat-card>
-          
-          <button mat-raised-button color="primary" class="mt-3">Contatar fornecedor</button>
-        </div>
-
-        <div class="col col-md-6">
-          <div class="modo-devolucao">
-            <h2>Modo de devolução</h2>
-            <mat-radio-group
-              aria-labelledby="example-radio-group-label"
-              class="example-radio-group"
-              [(ngModel)]="modoDevolucao">
-              <mat-radio-button class="example-radio-button">
-                Loja física
-              </mat-radio-button>
-
-              <mat-radio-button class="example-radio-button">
-                Transportadora
-              </mat-radio-button>
-            </mat-radio-group>
-          </div>
-
-          <div class="forma-reembolso">
-            <h2>Forma de reembolso</h2>
-            <mat-radio-group
-              aria-labelledby="example-radio-group-label"
-              class="example-radio-group"
-              [(ngModel)]="formaReembolso">
-              <mat-radio-button class="example-radio-button">
-                Receber meu dinheiro de volta
-              </mat-radio-button>
-
-              <mat-radio-button class="example-radio-button">
-                Um voucher para comprar no site
-              </mat-radio-button>
-
-              <mat-radio-button class="example-radio-button">
-                Quero o mesmo produto
-              </mat-radio-button>
-            </mat-radio-group>
-          </div>
-
-          <div class="motivo-devolucao">
-            <h2>Motivo da devolução</h2>
-            <textarea rows="4"></textarea>
-          </div>
-
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
-            <div fxFlex="49">
-              <button mat-raised-button class="w-100 mt-3">Enviar evidências</button>
-            </div>
-            <div fxFlex="49">
-              <button mat-raised-button color="primary" class="w-100 mt-3" matStepperNext>Confirmar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-form-devolution></app-form-devolution>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="confirmationFormGroup">
       <ng-template matStepLabel>Confirmação</ng-template>
       <p>You are now done.</p>
       <div>
@@ -122,10 +17,10 @@
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="analyzeFormGroup">
       <ng-template matStepLabel>Análise</ng-template>
-      
+
     </mat-step>
   </mat-horizontal-stepper>
-  
+
 </div>
