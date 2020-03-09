@@ -8,6 +8,8 @@ import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-
 })
 export class FormDevolutionComponent implements OnInit {
   product: Product;
+  formaReembolso: string;
+  modoDevolucao: string;
 
   constructor() { }
 

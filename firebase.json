@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/prototipo-ihc",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row" fxLayout.xs="column" fxLayoutWrap>
     <div fxFlex="50" >
         <div fxLayoutAlign="center center">
-            <mat-card fxFlex="70" class="card">
+            <mat-card fxFlex="70" fxFlex.xs="100" class="card">
                 <mat-card-title fxFlex="10" class="title"> {{ product.name }} </mat-card-title>
                 <div fxFlex="30" fxLayoutAlign="center center">
                     <img class="card-image" mat-card-image [src]="product.picture" alt="...">
