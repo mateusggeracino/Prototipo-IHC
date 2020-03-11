@@ -10,7 +10,8 @@ export class FormDevolutionComponent implements OnInit {
   product: Product;
   formaReembolso: string;
   modoDevolucao: string;
-
+  arquivosEnviados = true;
+  quantidadeArquivos = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +24,10 @@ export class FormDevolutionComponent implements OnInit {
     this.product.picture = 'https://img-br.prvstatic.com/front/get/photo/162819_-' +
       '_images_-_products_-_PLD7023-S_807_-_templ1.jpg';
     this.product.status = StatusProduct.finished;
+  }
+
+  contagemArquivos(event: any) {
+    this.quantidadeArquivos += event.files.length;
   }
 
 }

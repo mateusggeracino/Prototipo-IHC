@@ -1,17 +1,24 @@
-<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="24px">
-    <mat-card fxFlex="100" class="card" *ngFor="let product of products">
-        <mat-card-title fxFlex="10" class="title"> {{ product.name }} </mat-card-title>
-        <div fxFlex="30" fxLayoutAlign="center center">
-            <img class="card-image" mat-card-image [src]="product.picture" alt="...">
-        </div>
-        <mat-card-content fxLayout="column" fxLayoutAlign="space-around start">
-            <p>
-                {{ product.description }}
-            </p>
+<mat-form-field appearance="outline">
+    <mat-label>Nome do Produto</mat-label>
+    <input matInput placeholder="Por favor, digite o nome do produto" (keyup)="findProduct($event.target.value)">
+    <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
 
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="24px">
+    <mat-card fxFlex class="card"
+        *ngFor="let product of products | paginate: { itemsPerPage: itensPorPagina, currentPage: actualPage }; let i = index">
+        <mat-card-header>
+            <mat-card-title><span class="title"> {{ product.name }}</span></mat-card-title>
+        </mat-card-header>
+        <img class="card-image" mat-card-image [src]="product.picture" alt="...">
+        <mat-card-content>
             <div>
+                <mat-label>{{ product.description }}</mat-label>
+            </div>
+            <div fxLayoutAlign="end end">
                 <mat-label>
-                    Preço: {{ product.price }}
+                    <span style="color: black;"> Preço: </span>
+                    <span>{{ product.price }}</span>
                 </mat-label>
             </div>
         </mat-card-content>
@@ -20,4 +27,9 @@
             <button mat-raised-button class="button-view button-text">Visualizar</button>
         </mat-card-actions>
     </mat-card>
+</div>
+<div class="paginacao" fxLayoutAlign="center center">
+    <pagination-controls (pageChange)="actualPage = $event" previousLabel="Anterior" nextLabel="Próximo"
+        responsive="true">
+    </pagination-controls>
 </div>
