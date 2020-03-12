@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { FormControl } from '@angular/forms';
 
 export enum StatusProduct {
   finished,
@@ -15,7 +16,7 @@ export class Product {
 }
 
 
-const PRODUCTS_DATA = [
+export const PRODUCTS_DATA = [
   {
     name: 'Óculos de Sol',
     description: 'Óculos de sol na cor preta. Formato arredondado. Armação na cor preta. Ponte em U. Plaquetas embutidas.',
@@ -97,6 +98,8 @@ const PRODUCTS_DATA = [
   styleUrls: ['./list-my-produts.component.scss']
 })
 export class ListMyProdutsComponent implements OnInit {
+  @Output() productEmitter: EventEmitter<Product> = new EventEmitter();
+
   products: Product[];
   actualPage = 1;
   itensPorPagina = 4;
@@ -108,11 +111,14 @@ export class ListMyProdutsComponent implements OnInit {
 
   findProduct(query: string) {
     if (query.length > 0) {
-      query.split(' ').map(obj => {
-        this.products.push(...PRODUCTS_DATA.filter(product => product.name.includes(obj)));
-      });
+      this.products = PRODUCTS_DATA.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
     } else {
       this.products = PRODUCTS_DATA as Product[];
     }
   }
+
+  produtoSelecionado(product: Product) {
+    this.productEmitter.emit(product);
+  }
+
 }

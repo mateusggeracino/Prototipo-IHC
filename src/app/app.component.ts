@@ -1,5 +1,7 @@
 import { OnInit, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Product } from './pages/myProduct/list-my-produts/list-my-produts.component';
+import { Form } from './pages/devolution/form-devolution/form-devolution.component';
 
 
 @Component({
@@ -8,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  form: Form;
   isLinear = false;
   myProductsFormGroup: FormGroup;
   devolutionFormGroup: FormGroup;
@@ -17,6 +19,8 @@ export class AppComponent implements OnInit {
 
   modoDevolucao: string;
   formaReembolso: string;
+
+  product: Product;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -35,6 +39,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+  outputProduct(product: Product) {
+    this.product = product;
+    this.form = new Form();
+    this.form.product = this.product;
+  }
+
+  outputForm(form: Form) {
+    this.form = form;
+  }
 }
 
 

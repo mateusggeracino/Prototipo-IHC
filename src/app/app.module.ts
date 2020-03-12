@@ -18,12 +18,16 @@ import { FormDevolutionComponent } from './pages/devolution/form-devolution/form
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { ReadConfirmationComponent } from './pages/confirmation/read-confirmation/read-confirmation.component';
+import { AnalyzeItemComponent } from './pages/analyze/analyze-item/analyze-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListMyProdutsComponent,
-    FormDevolutionComponent
+    FormDevolutionComponent,
+    ReadConfirmationComponent,
+    AnalyzeItemComponent
   ],
   imports: [
     MatRadioModule,

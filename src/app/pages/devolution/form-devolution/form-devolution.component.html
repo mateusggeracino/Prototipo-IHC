@@ -2,18 +2,18 @@
     <div fxFlex="50">
         <div fxLayoutAlign="center center">
             <mat-card fxFlex="70" fxFlex.xs="100" class="card">
-                <mat-card-title fxFlex="10" class="title"> {{ product.name }} </mat-card-title>
+                <mat-card-title fxFlex="10" class="title"> {{ formEdit.product.name }} </mat-card-title>
                 <div fxFlex="30" fxLayoutAlign="center center">
-                    <img class="card-image" mat-card-image [src]="product.picture" alt="...">
+                    <img class="card-image" mat-card-image [src]="formEdit.product.picture" alt="...">
                 </div>
                 <mat-card-content fxLayout="column" fxLayoutAlign="space-around start">
                     <p>
-                        {{ product.description }}
+                        {{ formEdit.product.description }}
                     </p>
 
                     <div>
                         <mat-label>
-                            Preço: {{ product.price }}
+                            Preço: {{ formEdit.product.price }}
                         </mat-label>
                     </div>
                 </mat-card-content>
@@ -28,30 +28,30 @@
         <div class="modo-devolucao">
             <h2>Modo de devolução</h2>
             <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                [(ngModel)]="modoDevolucao">
-                <mat-radio-button class="example-radio-button">
+                [(ngModel)]="formEdit.modoDevolucao">
+                <mat-radio-button (change)="changeCheckBoxDevolucao($event.value)" value="1" class="example-radio-button">
                     Loja física
                 </mat-radio-button>
 
-                <mat-radio-button class="example-radio-button">
+                <mat-radio-button (change)="changeCheckBoxDevolucao($event.value)" value="2" class="example-radio-button">
                     Transportadora
                 </mat-radio-button>
             </mat-radio-group>
         </div>
 
-        <div class="forma-reembolso">
-            <h2>Forma de reembolso</h2>
+        <div class="formEdita-reembolso">
+            <h2>formEdita de reembolso</h2>
             <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                [(ngModel)]="formaReembolso">
-                <mat-radio-button class="example-radio-button">
+                [(ngModel)]="formEdit.formaReembolso">
+                <mat-radio-button (change)="changeCheckBoxReembolso($event.value)" value="1" class="example-radio-button">
                     Receber meu dinheiro de volta
                 </mat-radio-button>
 
-                <mat-radio-button class="example-radio-button">
+                <mat-radio-button (change)="changeCheckBoxReembolso($event.value)" value="2" class="example-radio-button">
                     Um voucher para comprar no site
                 </mat-radio-button>
 
-                <mat-radio-button class="example-radio-button">
+                <mat-radio-button (change)="changeCheckBoxReembolso($event.value)" value="3" class="example-radio-button">
                     Quero o mesmo produto
                 </mat-radio-button>
             </mat-radio-group>
@@ -59,22 +59,21 @@
 
         <div class="motivo-devolucao">
             <h2>Motivo da devolução</h2>
-            <textarea rows="4"></textarea>
+            <textarea [(ngModel)]="formEdit.description" rows="4"></textarea>
         </div>
 
         <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
             <div fxFlex="49">
-                <button mat-raised-button class="w-100 mt-3" (click)="inputDialog.click()">Anexar Evidências
+                <button mat-raised-button class="w-100 mt-3" (click)="inputDialog.click()">
+                    <mat-icon *ngIf="arquivosEnviados">attach_file</mat-icon>{{quantidadeArquivos}}
+                    <span style="margin-left: 15px;">Anexar Evidências</span>
                 </button>
 
-                <span>
-                    <mat-icon *ngIf="arquivosEnviados">attach_file</mat-icon>{{quantidadeArquivos}}
-                </span>
                 <input #inputDialog hidden="true" type="file" multiple
                     (change)="contagemArquivos($event.target)" />
             </div>
             <div fxFlex="49">
-                <button mat-raised-button color="primary" class="w-100 mt-3" matStepperNext>Confirmar</button>
+                <button mat-raised-button color="primary"  (click)="sendformEdit()" class="w-100 mt-3" matStepperNext>Confirmar</button>
             </div>
         </div>
     </div>

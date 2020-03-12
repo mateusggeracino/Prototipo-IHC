@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-produts.component';
 
 @Component({
@@ -7,7 +7,9 @@ import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-
   styleUrls: ['./form-devolution.component.scss']
 })
 export class FormDevolutionComponent implements OnInit {
-  product: Product;
+  @Input() formEdit: Form;
+  @Output() formEmitter: EventEmitter<Form> = new EventEmitter<Form>();
+
   formaReembolso: string;
   modoDevolucao: string;
   arquivosEnviados = true;
@@ -15,19 +17,41 @@ export class FormDevolutionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.product = new Product();
+    if (!this.formEdit) {
+      this.formEdit = new Form();
+    }
+    if (!this.formEdit.product) {
+      this.formEdit.product = new Product();
+    }
+  }
 
-    this.product.name = 'Óculos de Sol';
-    this.product.description = 'Óculos de sol na cor preta. Formato arredondado.' +
-      'Armação na cor preta. Ponte em U. Plaquetas embutidas.';
-    this.product.price = 94.99;
-    this.product.picture = 'https://img-br.prvstatic.com/front/get/photo/162819_-' +
-      '_images_-_products_-_PLD7023-S_807_-_templ1.jpg';
-    this.product.status = StatusProduct.finished;
+  changeCheckBoxDevolucao(value: number) {
+    this.formEdit.modoDevolucao = value;
+  }
+
+  changeCheckBoxReembolso(value: number) {
+    this.formEdit.formaReembolso = value;
   }
 
   contagemArquivos(event: any) {
     this.quantidadeArquivos += event.files.length;
+    this.formEdit.attachItems = this.quantidadeArquivos;
   }
 
+  sendformEdit() {
+    this.formEmitter.emit(this.formEdit);
+  }
+
+}
+
+
+export class Form {
+  constructor() {
+    this.product = new Product();
+  }
+  product: Product;
+  modoDevolucao: number;
+  formaReembolso: number;
+  description: string;
+  attachItems: number;
 }

@@ -5,23 +5,19 @@
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="myProductsFormGroup">
       <ng-template matStepLabel>Meus Pedidos</ng-template>
-      <app-list-my-produts></app-list-my-produts>
+      <app-list-my-produts (productEmitter)="outputProduct($event)" required></app-list-my-produts>
     </mat-step>
     <mat-step [stepControl]="devolutionFormGroup">
       <ng-template matStepLabel>Formulário de devolução</ng-template>
-      <app-form-devolution></app-form-devolution>
+      <app-form-devolution [formEdit]="form" (formEmitter)="outputForm($event)"></app-form-devolution>
     </mat-step>
     <mat-step [stepControl]="confirmationFormGroup">
       <ng-template matStepLabel>Confirmação</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
+      <app-read-confirmation [formReadOnly]="form"></app-read-confirmation>
     </mat-step>
     <mat-step [stepControl]="analyzeFormGroup">
       <ng-template matStepLabel>Análise</ng-template>
-
-    </mat-step>
+      <app-analyze-item></app-analyze-item>
+    </mat-step> 
   </mat-horizontal-stepper>
 </div>

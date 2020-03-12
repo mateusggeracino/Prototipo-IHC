@@ -23,7 +23,7 @@
             </div>
         </mat-card-content>
         <mat-card-actions fxFlex="20" fxLayoutAlign="end end">
-            <button mat-raised-button class="button-devolution button-text" matStepperNext>Devolver</button>
+            <button mat-raised-button (click)="produtoSelecionado(product)" class="button-devolution button-text" matStepperNext>Devolver</button>
             <button mat-raised-button class="button-view button-text">Visualizar</button>
         </mat-card-actions>
     </mat-card>
