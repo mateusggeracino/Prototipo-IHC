@@ -1,82 +1,90 @@
 .container {
-    max-width: 1200px;
-  }
-  
-  .product h2 {
-    padding: 0 10px;
-    margin-bottom: 0;
-    font-size: 16px;
-  }
-  
-  .product ul {
-    margin: 0px;
-  }
-  
-  .product-description {
-    padding: 5px 10px 0;
-  }
-  
-  .example-radio-group {
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-  }
-  
-  .example-radio-button {
-    margin: 5px;
-  }
-  
-  textarea {
-    width: 100%;
-    outline: none;
-    padding: 10px;
-    font-size: 12px;
-  }
-  
-  .card {
-    max-width: 300px;
-  }
-  
-  .card-image {
-    width: 100%;
-    height: 250px;
-  }
-  
-  .title {
-    color: #5d5d5d;
-    margin: 24px 0;
-  }
-  
-  .margin-y-16 {
-    margin: 16px 0;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #5d5d5d;
-  }
-  
-  .button-text {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-  }
-  
-  .button-view {
-    background-color: #868181;
-    color: rgb(255, 255, 255);
-  }
-  
-  .button-devolution {
-    background-color: #373b77;
-    color: #fff;
-  }
-  
-  .button-provider {
-    background-color: #373b77;
-    color: #fff;
-  }
-  
-  button{
-      outline: none;
-  }
+  max-width: 1200px;
+}
+
+.product h2 {
+  padding: 0 10px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.product ul {
+  margin: 0px;
+}
+
+.product-description {
+  padding: 5px 10px 0;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+textarea {
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.card {
+  max-width: 300px;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+}
+
+.title {
+  color: #5d5d5d;
+  margin: 24px 0;
+}
+
+.margin-y-16 {
+  margin: 16px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #5d5d5d;
+}
+
+.button-text {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.button-view {
+  background-color: #868181;
+  color: rgb(255, 255, 255);
+}
+
+.button-devolution {
+  background-color: #373b77;
+  color: #fff;
+}
+
+.button-provider {
+  background-color: #373b77;
+  color: #fff;
+}
+
+button {
+  outline: none;
+}
+
+.button-text {
+  background-color: #4682b4;
+}
+
+.price {
+  font-weight: bold;
+}

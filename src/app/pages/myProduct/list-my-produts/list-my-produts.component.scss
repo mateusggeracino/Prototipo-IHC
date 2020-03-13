@@ -3,8 +3,8 @@
 }
 
 .card-image {
-  width: 100%;
-  height: 250px;
+  width: 260px;
+  height: 200px;
 }
 
 .title {
@@ -39,10 +39,14 @@ span {
 }
 
 .button-devolution {
-  background-color: #373b77;
+  background-color: #4682b4;
   color: #fff;
 }
 
 .paginacao {
   margin: 24px 0;
+}
+
+.price {
+  font-weight: bold;
 }

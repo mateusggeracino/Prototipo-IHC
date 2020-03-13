@@ -1,7 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "Myriad";
+  src: url(assets/font/MyriadProRegular.ttf) format("opentype");
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Myriad";
+}
+
+html,
+body {
+  background-color: #fff;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Myriad";
+}
+
+.myriad {
+  font-family: "Myriad";
+}
+.mat-toolbar {
+  background: rgb(70, 130, 180);
+  background: linear-gradient(
+    180deg,
+    rgba(70, 130, 180, 1) 0%,
+    rgba(70, 130, 180, 0.9948354341736695) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: #4682b4;
+}
+
+.ngx-pagination .current,
+.btn-info {
+  background: #4682b4 !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #4682b4 !important;
+  border-radius: 20px !important;
+  border: transparent !important;
+}
+
+a {
+  outline: none;
+}
+
+.azul {
+  color: #4682b4;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+    background-color: #4682b4;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #4682b4;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #4682b4;
+}
+
+.cinza {
+  color: #5d5d5d;
+}
+
+.mat-step-label {
+  font-family: "myriad";
+}
+
+.mat-step-label:hover {
+  color: inherit;
+}
+
+.mat-step-header:hover {
+  background-color: #d3d3d3;
+  border-radius: 25px;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #4682b4 !important;
+}
+
+//input outline color
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #4682b4 !important;
+  // opacity: 1!important;
+}
+
+//mat-input focused color
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #4682b4 !important;
+}
+
+// mat-label focused style
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #4682b4 !important;
+}

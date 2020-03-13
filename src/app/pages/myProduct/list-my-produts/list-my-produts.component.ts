@@ -36,7 +36,7 @@ export const PRODUCTS_DATA = [
   },
   {
     name: 'Pente Long Wicks',
-    description: 'Penteado em mechas quiff - preto',
+    description: 'Penteado em mechas quiff - preto. é um utensílio formado por numerosos dentes mais ou menos finos',
     price: 9.99,
     picture: 'https://www.superbonitacosmeticos.com.br' +
       '/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/s/escova-penteado-quiffl-preto.jpg',
@@ -60,7 +60,7 @@ export const PRODUCTS_DATA = [
   },
   {
     name: 'Pente Long Wicks',
-    description: 'Penteado em mechas quiff - preto',
+    description: 'Penteado em mechas quiff - preto. é um utensílio formado por numerosos dentes mais ou menos finos',
     price: 9.99,
     picture: 'https://www.superbonitacosmeticos.com.br' +
       '/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/s/escova-penteado-quiffl-preto.jpg',
@@ -84,7 +84,7 @@ export const PRODUCTS_DATA = [
   },
   {
     name: 'Pente Long Wicks',
-    description: 'Penteado em mechas quiff - preto',
+    description: 'Penteado em mechas quiff - preto. é um utensílio formado por numerosos dentes mais ou menos finos',
     price: 9.99,
     picture: 'https://www.superbonitacosmeticos.com.br' +
       '/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/s/escova-penteado-quiffl-preto.jpg',

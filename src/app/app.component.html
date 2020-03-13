@@ -1,7 +1,7 @@
 <mat-toolbar>
-  <span class="container">6MKT</span>
+  <span class="container myriad text-6mkt cinza">6MKT</span>
 </mat-toolbar>
-<div class="container">
+<div class="container mt-50">
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="myProductsFormGroup">
       <ng-template matStepLabel>Meus Pedidos</ng-template>
@@ -17,7 +17,7 @@
     </mat-step>
     <mat-step [stepControl]="analyzeFormGroup">
       <ng-template matStepLabel>Análise</ng-template>
-      <app-analyze-item></app-analyze-item>
+      <app-analyze-item [formReadOnly]="form"></app-analyze-item>
     </mat-step> 
   </mat-horizontal-stepper>
 </div>

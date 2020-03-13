@@ -1,44 +1,53 @@
 .container {
-    max-width:1200px;
+  max-width: 1200px;
 }
 
 .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
 }
 
 .product .mat-card-image:first-child {
-    margin: 0;
+  margin: 0;
 }
 
 .product h2 {
-    padding:0 10px;
-    margin-bottom:0;
-    font-size:16px;
+  padding: 0 10px;
+  margin-bottom: 0;
+  font-size: 16px;
 }
 
 .product ul {
-    margin:0px;
+  margin: 0px;
 }
 
 .product-description {
-    padding:5px 10px 0;
+  padding: 5px 10px 0;
 }
 
 .example-radio-group {
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
 }
-  
+
 .example-radio-button {
-    margin: 5px;
+  margin: 5px;
 }
 
 textarea {
-    width:100%;
-    outline:none;
-    padding:10px;
-    font-size:12px;
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  font-size: 12px;
 }
 
+.mt-50 {
+  margin-top: 50px;
+}
+
+.text-6mkt {
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+}

@@ -1,35 +1,36 @@
 <mat-form-field appearance="outline">
-    <mat-label>Nome do Produto</mat-label>
-    <input matInput placeholder="Por favor, digite o nome do produto" (keyup)="findProduct($event.target.value)">
-    <mat-icon matSuffix>search</mat-icon>
+    <mat-label class="myriad">Nome do Produto</mat-label>
+    <input matInput class="myriad" placeholder="Por favor, digite o nome do produto" (keyup)="findProduct($event.target.value)">
+    <mat-icon class="cinza" matSuffix>search</mat-icon>
 </mat-form-field>
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="24px">
     <mat-card fxFlex class="card"
         *ngFor="let product of products | paginate: { itemsPerPage: itensPorPagina, currentPage: actualPage }; let i = index">
         <mat-card-header>
-            <mat-card-title><span class="title"> {{ product.name }}</span></mat-card-title>
+            <mat-card-title><span class="title myriad"> {{ product.name }}</span></mat-card-title>
         </mat-card-header>
         <img class="card-image" mat-card-image [src]="product.picture" alt="...">
         <mat-card-content>
             <div>
-                <mat-label>{{ product.description }}</mat-label>
+                <mat-label class="myriad cinza">{{ product.description }}</mat-label>
             </div>
-            <div fxLayoutAlign="end end">
-                <mat-label>
-                    <span style="color: black;"> Preço: </span>
-                    <span>{{ product.price }}</span>
-                </mat-label>
-            </div>
+            
         </mat-card-content>
-        <mat-card-actions fxFlex="20" fxLayoutAlign="end end">
-            <button mat-raised-button (click)="produtoSelecionado(product)" class="button-devolution button-text" matStepperNext>Devolver</button>
-            <button mat-raised-button class="button-view button-text">Visualizar</button>
+        <div fxLayoutAlign="end end">
+            <mat-label class="price cinza">
+                <span class="myriad"> Preço: </span>
+                <span class=" myriad" >{{ product.price }}</span>
+            </mat-label>
+        </div>
+        <mat-card-actions fxFlex="20" fxLayoutGap="10px" fxLayoutAlign="center center">
+            <button mat-raised-button (click)="produtoSelecionado(product)" class="button-devolution button-text myriad" matStepperNext>Devolver</button>
+            <button mat-raised-button class="button-view button-text myriad">Visualizar</button>
         </mat-card-actions>
     </mat-card>
 </div>
 <div class="paginacao" fxLayoutAlign="center center">
-    <pagination-controls (pageChange)="actualPage = $event" previousLabel="Anterior" nextLabel="Próximo"
+    <pagination-controls class="myriad" (pageChange)="actualPage = $event" previousLabel="Anterior" nextLabel="Próximo"
         responsive="true">
     </pagination-controls>
 </div>

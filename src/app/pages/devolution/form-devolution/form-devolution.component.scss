@@ -38,7 +38,7 @@ textarea {
 }
 
 .card-image {
-  width: 100%;
+  width: 401.5px;
   height: 250px;
 }
 
@@ -72,11 +72,15 @@ textarea {
   color: #fff;
 }
 
-.button-provider {
-  background-color: #373b77;
-  color: #fff;
+button {
+  outline: none;
 }
 
-button{
-    outline: none;
+.price {
+  font-weight: bold;
+}
+
+.button-provider {
+  background-color: #4682b4;
+  color: white;
 }

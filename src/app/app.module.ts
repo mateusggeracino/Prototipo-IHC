@@ -20,6 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ReadConfirmationComponent } from './pages/confirmation/read-confirmation/read-confirmation.component';
 import { AnalyzeItemComponent } from './pages/analyze/analyze-item/analyze-item.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { AnalyzeItemComponent } from './pages/analyze/analyze-item/analyze-item.
     FormsModule,
     MatIconModule,
     MatInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
