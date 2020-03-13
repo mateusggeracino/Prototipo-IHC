@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-produts.component';
+import { SendMessageProviderComponent } from '../../modals/send-message-provider/send-message-provider/send-message-provider.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form-devolution',
@@ -14,7 +16,7 @@ export class FormDevolutionComponent implements OnInit {
   modoDevolucao: string;
   arquivosEnviados = true;
   quantidadeArquivos = 0;
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
     if (!this.formEdit) {
@@ -40,6 +42,15 @@ export class FormDevolutionComponent implements OnInit {
 
   sendformEdit() {
     this.formEmitter.emit(this.formEdit);
+  }
+
+
+  openChat() {
+    this.dialog.open(SendMessageProviderComponent, {
+      width: '408px',
+      height: '400px',
+      panelClass: 'semPadding'
+    });
   }
 
 }

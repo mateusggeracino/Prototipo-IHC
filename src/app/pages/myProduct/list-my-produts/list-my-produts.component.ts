@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ViewProductComponent } from '../../modals/view-product/view-product/view-product.component';
 
 export enum StatusProduct {
   finished,
@@ -103,7 +105,7 @@ export class ListMyProdutsComponent implements OnInit {
   products: Product[];
   actualPage = 1;
   itensPorPagina = 4;
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.products = PRODUCTS_DATA as Product[];
@@ -121,4 +123,11 @@ export class ListMyProdutsComponent implements OnInit {
     this.productEmitter.emit(product);
   }
 
+  viewProduct(product: Product) {
+    this.dialog.open(ViewProductComponent, {
+      width: '408px',
+      data: { product },
+      panelClass: 'semPadding'
+    });
+  }
 }

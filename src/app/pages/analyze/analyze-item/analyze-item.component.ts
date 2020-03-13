@@ -25,6 +25,6 @@ export class AnalyzeItemComponent implements OnInit {
     setTimeout(() => {
       this.date = new Date();
       this.enviando = false;
-    }, 8000);
+    }, 40000);
   }
 }

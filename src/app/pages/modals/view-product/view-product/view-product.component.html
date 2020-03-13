@@ -1,0 +1,18 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title><span class="title myriad"> {{ product.name }}</span></mat-card-title>
+    </mat-card-header>
+    <img class="card-image" mat-card-image [src]="product.picture" alt="...">
+    <mat-card-content>
+        <div>
+            <mat-label class="myriad cinza">{{ product.description }}</mat-label>
+        </div>
+
+    </mat-card-content>
+    <div fxLayoutAlign="end end">
+        <mat-label class="price cinza">
+            <span class="myriad"> Preço: </span>
+            <span class=" myriad">{{ product.price }}</span>
+        </mat-label>
+    </div>
+</mat-card>

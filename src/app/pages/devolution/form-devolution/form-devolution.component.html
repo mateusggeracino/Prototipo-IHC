@@ -21,7 +21,8 @@
             </mat-card>
         </div>
         <div fxLayoutAlign="center center" class="margin-y-16">
-            <button fxFlex="70" class="button-text button-provider myriad" mat-raised-button>Contatar fornecedor</button>
+            <button fxFlex="70" class="button-text button-provider myriad" (click)="openChat()"
+                mat-raised-button>Contatar fornecedor</button>
         </div>
     </div>
 
@@ -78,8 +79,8 @@
                 <input #inputDialog hidden="true" type="file" multiple (change)="contagemArquivos($event.target)" />
             </div>
             <div fxFlex="49">
-                <button mat-raised-button color="primary" (click)="sendformEdit()" class="w-100 mt-3 myriad button-provider"
-                    matStepperNext>Confirmar</button>
+                <button mat-raised-button color="primary" (click)="sendformEdit()"
+                    class="w-100 mt-3 myriad button-provider" matStepperNext>Confirmar</button>
             </div>
         </div>
     </div>

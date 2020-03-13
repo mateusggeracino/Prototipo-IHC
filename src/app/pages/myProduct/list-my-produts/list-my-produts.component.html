@@ -25,7 +25,7 @@
         </div>
         <mat-card-actions fxFlex="20" fxLayoutGap="10px" fxLayoutAlign="center center">
             <button mat-raised-button (click)="produtoSelecionado(product)" class="button-devolution button-text myriad" matStepperNext>Devolver</button>
-            <button mat-raised-button class="button-view button-text myriad">Visualizar</button>
+            <button mat-raised-button class="button-view button-text myriad" (click)="viewProduct(product)">Visualizar</button>
         </mat-card-actions>
     </mat-card>
 </div>

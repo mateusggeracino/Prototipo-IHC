@@ -62,19 +62,29 @@ a {
   color: #4682b4;
 }
 
-.mat-radio-button.mat-accent .mat-radio-inner-circle{
-    background-color: #4682b4;
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #4682b4;
 }
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
   border-color: #4682b4;
 }
 
-.mat-progress-spinner circle, .mat-spinner circle{
-    stroke: #4682b4;
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #4682b4;
 }
 
 .cinza {
   color: #5d5d5d;
+}
+
+.semPadding .mat-dialog-container {
+  padding: 0 !important;
+}
+
+.noPadding .mat-dialog-container {
+  padding: 0 !important;
+  width: 100%
 }
 
 .mat-step-label {

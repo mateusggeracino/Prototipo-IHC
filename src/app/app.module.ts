@@ -21,6 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReadConfirmationComponent } from './pages/confirmation/read-confirmation/read-confirmation.component';
 import { AnalyzeItemComponent } from './pages/analyze/analyze-item/analyze-item.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ViewProductComponent } from './pages/modals/view-product/view-product/view-product.component';
+import { SendMessageProviderComponent } from './pages/modals/send-message-provider/send-message-provider/send-message-provider.component';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ListMyProdutsComponent,
     FormDevolutionComponent,
     ReadConfirmationComponent,
-    AnalyzeItemComponent
+    AnalyzeItemComponent,
+    ViewProductComponent,
+    SendMessageProviderComponent
   ],
   imports: [
     MatRadioModule,
@@ -50,7 +55,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     MatIconModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

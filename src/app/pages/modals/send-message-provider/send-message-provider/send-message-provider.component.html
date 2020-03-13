@@ -1,0 +1,21 @@
+<div fxLayout="column">
+    <div class="px24" fxLayout="row" fxFlex>
+        <div fxLayout="row" fxFlex fxLayoutAlign="start top">
+            <mat-label><span class="title myriad"> Chat - Fornecedor</span></mat-label>
+        </div>
+        <div>
+            <div fxLayoutAlign="center" class="commentUser" *ngFor="let comment of comments">
+                <p class="myriad cinza">{{ comment }}</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="end end" class="inputComment">
+        <mat-form-field appearance="outline">
+            <input matInput class="myriad" placeholder="Digite seu comentário" [(ngModel)]="inputComment"
+                (keyup.enter)="addComent()">
+            <mat-icon class="cinza" matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+</div>
