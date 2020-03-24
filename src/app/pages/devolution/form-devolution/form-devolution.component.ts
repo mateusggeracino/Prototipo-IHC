@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-produts.component';
 import { SendMessageProviderComponent } from '../../modals/send-message-provider/send-message-provider/send-message-provider.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ContactVendorComponent } from '../contact-vendor/contact-vendor.component';
 
 @Component({
   selector: 'app-form-devolution',
@@ -16,7 +17,18 @@ export class FormDevolutionComponent implements OnInit {
   modoDevolucao: string;
   arquivosEnviados = true;
   quantidadeArquivos = 0;
+  
   constructor(private dialog: MatDialog) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ContactVendorComponent, {
+      width: '50%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit(): void {
     if (!this.formEdit) {
