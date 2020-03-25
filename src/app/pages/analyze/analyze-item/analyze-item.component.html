@@ -1,19 +1,7 @@
-<div *ngIf="enviando" class="mt-50" fxLayout="column" fxflex fxLayoutAlign="center center">
-    <div fxLayout="row">
-        <mat-label class="myrad cinza fz25">Estamos enviando uma etiqueta para o seu email. Por favor, aguarde
-        </mat-label>
-    </div>
-
-    <div class="mt-50">
-        <mat-spinner></mat-spinner>
-    </div>
-</div>
-
-
-<div *ngIf="!enviando" fxflex fxLayoutAlign="center center" fxLayout="column" class="mt-50">
+<div fxflex fxLayoutAlign="center center" fxLayout="column" class="mt-50">
     <div fxLayout="column" fxLayoutAlign="center center">
-        <mat-label fxLayout="row" class="myrad cinza fz25">Você recebeu a etiqueta abaixo em seu email. </mat-label>
-        <mat-label fxLayout="row" class="myrad cinza fz25 mt-10"> Você já pode imprimi-lá</mat-label>
+        <mat-label fxLayout="row" class="myrad cinza fz25">Estamos analisando o seu pedido de devolução do item abaixo.</mat-label>
+        <mat-label fxLayout="row" class="myrad cinza fz25 mt-10"> Em breve você receberá um e-mail com o resultado.</mat-label>
     </div>
 
     <div class="etiqueta mt-50 myrad cinza">
