@@ -1,12 +1,12 @@
 <h2 mat-dialog-title>Contatar fornecedor</h2>
 <mat-dialog-content class="mat-typography">
-  <h3>Envie uma mensagem para o fornecedor</h3>
+  <h3 class="myriad cinza">Envie uma mensagem para o fornecedor</h3>
   <mat-form-field class="w-100" appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea rows="15" matInput></textarea>
+    <mat-label class="myriad cinza">Mensagem</mat-label>
+    <textarea rows="10" [(ngModel)]="comment" matInput></textarea>
   </mat-form-field>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Enviar</button>
+<mat-dialog-actions fxLayoutAlign="end">
+  <button mat-button mat-dialog-close class="button-text myriad cinza">Cancelar</button>
+  <button mat-button class="button-text myriad cinza" (click)="send()" [disabled]="comment.length === 0">Enviar</button>
 </mat-dialog-actions>

@@ -25,6 +25,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ViewProductComponent } from './pages/modals/view-product/view-product/view-product.component';
 import { SendMessageProviderComponent } from './pages/modals/send-message-provider/send-message-provider/send-message-provider.component';
 import { ContactVendorComponent } from './pages/devolution/contact-vendor/contact-vendor.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ContactVendorComponent } from './pages/devolution/contact-vendor/contac
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

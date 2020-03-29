@@ -17,15 +17,19 @@ export class FormDevolutionComponent implements OnInit {
   modoDevolucao: string;
   arquivosEnviados = true;
   quantidadeArquivos = 0;
-  
+
   constructor(private dialog: MatDialog) { }
 
   openDialog() {
     const dialogRef = this.dialog.open(ContactVendorComponent, {
-      width: '50%',
+      width: '500px',
+      data: { comment: this.formEdit.comment }
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.formEdit.comment = result;
+      }
       console.log(`Dialog result: ${result}`);
     });
   }
@@ -77,4 +81,5 @@ export class Form {
   formaReembolso: number;
   description: string;
   attachItems: number;
+  comment: string;
 }
