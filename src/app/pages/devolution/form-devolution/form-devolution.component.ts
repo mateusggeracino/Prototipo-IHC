@@ -3,6 +3,7 @@ import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-
 import { SendMessageProviderComponent } from '../../modals/send-message-provider/send-message-provider/send-message-provider.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactVendorComponent } from '../contact-vendor/contact-vendor.component';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-devolution',
@@ -17,8 +18,9 @@ export class FormDevolutionComponent implements OnInit {
   modoDevolucao: string;
   arquivosEnviados = true;
   quantidadeArquivos = 0;
+  devolutionForm: FormGroup;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private fb: FormBuilder) { }
 
   openDialog() {
     const dialogRef = this.dialog.open(ContactVendorComponent, {
@@ -41,22 +43,23 @@ export class FormDevolutionComponent implements OnInit {
     if (!this.formEdit.product) {
       this.formEdit.product = new Product();
     }
-  }
 
-  changeCheckBoxDevolucao(value: number) {
-    this.formEdit.modoDevolucao = value;
-  }
-
-  changeCheckBoxReembolso(value: number) {
-    this.formEdit.formaReembolso = value;
+    this.devolutionForm = this.fb.group({
+      modoDevolucao: ['', Validators.required],
+      formaReembolso: ['', Validators.required],
+      description: ['', Validators.required],
+      attachItems: [''],
+      comment: [''],
+    });
   }
 
   contagemArquivos(event: any) {
     this.quantidadeArquivos += event.files.length;
-    this.formEdit.attachItems = this.quantidadeArquivos;
+    this.devolutionForm.patchValue({ attachItems: this.quantidadeArquivos });
   }
 
   sendformEdit() {
+    this.formEdit = Object.assign({}, this.formEdit, this.devolutionForm.value);
     this.formEmitter.emit(this.formEdit);
   }
 
@@ -68,7 +71,6 @@ export class FormDevolutionComponent implements OnInit {
       panelClass: 'semPadding'
     });
   }
-
 }
 
 
@@ -76,6 +78,7 @@ export class Form {
   constructor() {
     this.product = new Product();
   }
+
   product: Product;
   modoDevolucao: number;
   formaReembolso: number;
