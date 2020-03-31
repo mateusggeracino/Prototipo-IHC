@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { StatusProduct, Product } from '../../myProduct/list-my-produts/list-my-produts.component';
+import { Product } from '../../myProduct/list-my-produts/list-my-produts.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Form } from '../../devolution/form-devolution/form-devolution.component';
 

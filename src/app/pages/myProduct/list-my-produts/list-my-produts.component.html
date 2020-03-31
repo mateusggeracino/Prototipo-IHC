@@ -1,8 +1,37 @@
-<mat-form-field appearance="outline">
-    <mat-label class="myriad">Nome do Produto</mat-label>
-    <input matInput class="myriad" placeholder="Por favor, digite o nome do produto" (keyup)="findProduct($event.target.value)">
-    <mat-icon class="cinza" matSuffix>search</mat-icon>
-</mat-form-field>
+<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
+    <div fxFlex="60">
+        <mat-form-field appearance="outline">
+            <mat-label class="myriad">Nome do Produto</mat-label>
+            <input [(ngModel)]="inputSearch" matInput class="myriad" placeholder="Por favor, digite o nome do produto"
+                (keyup.enter)="findProduct()">
+            <mat-icon class="cinza" matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div fxFlex>
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="statusSelected">
+                <mat-select-trigger *ngIf="statusSelected">
+                    <span matPrefix class="ball-status" [ngStyle]="{'background-color': statusSelected.color}"></span>
+                    {{statusSelected.name}}
+                </mat-select-trigger>
+                <mat-option *ngFor="let status of status" [value]="status">
+                    <span matPrefix class="ball-status" [ngStyle]="{'background-color': status.color}"></span>
+                    {{status.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div fxLayoutAlign="center center" fxLayoutGap="24px">
+    <button (click)="clearInputs()" mat-fab class="button-clear">
+        <mat-icon matSuffix>clear</mat-icon>
+    </button>
+
+    <button (click)="findProduct()" mat-fab class="button-search">
+        <mat-icon matSuffix>search</mat-icon>
+    </button>
+</div>
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="24px">
     <mat-card fxFlex class="card"
@@ -15,17 +44,19 @@
             <div>
                 <mat-label class="myriad cinza">{{ product.description }}</mat-label>
             </div>
-            
+
         </mat-card-content>
         <div fxLayoutAlign="end end">
             <mat-label class="price cinza">
                 <span class="myriad"> Preço: </span>
-                <span class=" myriad" >{{ product.price }}</span>
+                <span class=" myriad">{{ product.price }}</span>
             </mat-label>
         </div>
         <mat-card-actions fxFlex="20" fxLayoutGap="10px" fxLayoutAlign="center center">
-            <button mat-raised-button (click)="produtoSelecionado(product)" class="button-devolution button-text myriad" matStepperNext>Devolver</button>
-            <button mat-raised-button class="button-view button-text myriad" (click)="viewProduct(product)">Visualizar</button>
+            <button mat-raised-button (click)="produtoSelecionado(product)" class="button-devolution button-text myriad"
+                matStepperNext>Devolver</button>
+            <button mat-raised-button class="button-view button-text myriad"
+                (click)="viewProduct(product)">Visualizar</button>
         </mat-card-actions>
     </mat-card>
 </div>

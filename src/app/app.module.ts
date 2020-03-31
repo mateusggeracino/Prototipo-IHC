@@ -26,6 +26,7 @@ import { ViewProductComponent } from './pages/modals/view-product/view-product/v
 import { SendMessageProviderComponent } from './pages/modals/send-message-provider/send-message-provider/send-message-provider.component';
 import { ContactVendorComponent } from './pages/devolution/contact-vendor/contact-vendor.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

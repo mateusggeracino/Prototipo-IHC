@@ -19,7 +19,7 @@ span {
   max-width: 60%;
 }
 
-.mat-form-field{
+.mat-form-field {
   width: 100%;
 }
 
@@ -49,4 +49,29 @@ span {
 
 .price {
   font-weight: bold;
+}
+
+button {
+  outline: none;
+}
+
+.button-search {
+  margin-bottom: 20px;
+  background-color: #4682b4;
+}
+
+.button-clear {
+  margin-bottom: 20px;
+  background-color: #868181;
+}
+
+.ball-status {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: -webkit-inline-box !important;
+  display: inline-flex !important;
+  background-color: lightgrey;
+  vertical-align: middle;
+  margin-right: 12px;
 }

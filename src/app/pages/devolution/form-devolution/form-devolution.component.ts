@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product, StatusProduct } from '../../myProduct/list-my-produts/list-my-produts.component';
+import { Product } from '../../myProduct/list-my-produts/list-my-produts.component';
 import { SendMessageProviderComponent } from '../../modals/send-message-provider/send-message-provider/send-message-provider.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactVendorComponent } from '../contact-vendor/contact-vendor.component';
