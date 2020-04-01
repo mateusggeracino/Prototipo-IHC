@@ -38,7 +38,7 @@ textarea {
 }
 
 .card-image {
-  width: 100%;
+  width: 436.5px;
   height: 250px;
 }
 
@@ -60,6 +60,8 @@ textarea {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  background-color: #373b77;
+  color: #fff;
 }
 
 .button-view {
@@ -87,4 +89,8 @@ button {
 
 .price {
   font-weight: bold;
+}
+
+.button-back {
+  background-color: #4682b4;
 }

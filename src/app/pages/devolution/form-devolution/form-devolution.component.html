@@ -1,8 +1,16 @@
 <form [formGroup]="devolutionForm">
-    <div class="row" fxLayout.xs="column" fxLayoutWrap>
-        <div fxFlex="50">
-            <div fxLayoutAlign="center center">
-                <mat-card fxFlex="70" fxFlex.xs="100" class="card">
+    <div fxFlex fxLayoutAlign="center center">
+        <button mat-fab class="button-back" matStepperPrevious>
+            <mat-icon matSuffix>keyboard_arrow_left</mat-icon>
+        </button>
+    </div>
+    <div fxFlex="100" class="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutWrap>
+        <div fxLayout="column" fxFlex="50">
+            <div fxLayout="row" fxFlex fxLayoutAlign="center center">
+                <h1 class="myriad cinza">Produto</h1>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-card fxFlex="80" fxFlex.xs="100" class="card">
                     <mat-card-header>
                         <mat-card-title><span class="title myriad"> {{ formEdit.product.name }}</span></mat-card-title>
                     </mat-card-header>
@@ -21,23 +29,21 @@
                     </div>
                 </mat-card>
             </div>
-            <div fxLayoutAlign="center center" class="margin-y-16">
-                <button fxFlex="70" class="button-text button-provider myriad" (click)="openDialog()"
-                    mat-raised-button>Contatar fornecedor</button>
+            <div class="mt-20" fxLayout="row" fxFlex fxLayoutAlign="center center">
+                <span class="bold">* Campos obrigatórios</span>
             </div>
         </div>
 
         <div fxFlex="50">
             <div class="modo-devolucao">
                 <h2 class="myriad cinza">Modo de devolução *</h2>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="modoDevolucao">
-                    <mat-radio-button value="1"
-                        class="myriad cinza example-radio-button">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="modoDevolucao">
+                    <mat-radio-button value="1" class="myriad cinza example-radio-button">
                         Loja física
                     </mat-radio-button>
 
-                    <mat-radio-button value="2"
-                        class="myriad cinza example-radio-button">
+                    <mat-radio-button value="2" class="myriad cinza example-radio-button">
                         Transportadora
                     </mat-radio-button>
                 </mat-radio-group>
@@ -47,20 +53,18 @@
             </div>
 
             <div class="formEdita-reembolso">
-                <h2 class="myriad cinza">Edita de reembolso *</h2>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="formaReembolso">
-                    <mat-radio-button value="1"
-                        class="myriad cinza example-radio-button">
+                <h2 class="myriad cinza">Formas de reembolso *</h2>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="formaReembolso">
+                    <mat-radio-button value="1" class="myriad cinza example-radio-button">
                         Receber meu dinheiro de volta
                     </mat-radio-button>
 
-                    <mat-radio-button value="2"
-                        class="myriad cinza example-radio-button">
+                    <mat-radio-button value="2" class="myriad cinza example-radio-button">
                         Um voucher para comprar no site
                     </mat-radio-button>
 
-                    <mat-radio-button value="3"
-                        class="myriad cinza example-radio-button">
+                    <mat-radio-button value="3" class="myriad cinza example-radio-button">
                         Quero o mesmo produto
                     </mat-radio-button>
                 </mat-radio-group>
@@ -82,8 +86,8 @@
                     <input #inputDialog hidden="true" type="file" multiple (change)="contagemArquivos($event.target)" />
                 </div>
                 <div fxFlex="49">
-                    <button mat-raised-button color="primary" [disabled]="!devolutionForm.valid" (click)="sendformEdit()"
-                        class="w-100 mt-3 myriad button-provider" matStepperNext>Confirmar</button>
+                    <button mat-raised-button [disabled]="!devolutionForm.valid" (click)="sendformEdit()"
+                        class="w-100 mt-3 myriad button-text" matStepperNext>Confirmar</button>
                 </div>
             </div>
         </div>

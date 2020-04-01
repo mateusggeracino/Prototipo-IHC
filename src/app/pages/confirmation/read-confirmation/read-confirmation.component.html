@@ -1,77 +1,90 @@
-<div class="row" fxLayout.xs="column" fxLayoutWrap>
-    <div fxFlex="50">
-        <div fxLayoutAlign="center center">
-            <mat-card fxFlex="70" fxFlex.xs="100" class="card">
-                <mat-card-header>
-                    <mat-card-title><span class="title myriad"> {{ formReadOnly.product.name }}</span></mat-card-title>
-                </mat-card-header>
-                <img class="card-image" mat-card-image [src]="formReadOnly.product.picture" alt="...">
-                <mat-card-content>
-                    <div>
-                        <mat-label class="myriad cinza">{{ formReadOnly.product.description }}</mat-label>
-                    </div>
-
-                </mat-card-content>
-                <div fxLayoutAlign="end end">
-                    <mat-label class="price cinza">
-                        <span class="myriad"> Preço: </span>
-                        <span class=" myriad">{{ formReadOnly.product.price }}</span>
-                    </mat-label>
-                </div>
-            </mat-card>
-        </div>
+<div>
+    <div fxFlex fxLayoutAlign="center center">
+        <button mat-fab class="button-back" matStepperPrevious>
+            <mat-icon matSuffix>keyboard_arrow_left</mat-icon>
+        </button>
     </div>
-
-    <div fxFlex="50">
-        <div class="modo-devolucao">
-            <h2 class="myriad cinza">Modo de devolução</h2>
-            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" name="mat-radio"
-                [(ngModel)]="formReadOnly.modoDevolucao">
-                <mat-radio-button disabled="true" value="1" class="myriad cinza example-radio-button">
-                    Loja física
-                </mat-radio-button>
-
-                <mat-radio-button disabled="true" value="2" class="myriad cinza example-radio-button">
-                    Transportadora
-                </mat-radio-button>
-            </mat-radio-group>
-        </div>
-
-        <div class="forma-reembolso">
-            <h2 class="myriad">Forma de reembolso</h2>
-            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                name="formaReembolso" [(ngModel)]="formReadOnly.formaReembolso">
-                <mat-radio-button disabled="true" value="1" class="myriad example-radio-button">
-                    Receber meu dinheiro de volta
-                </mat-radio-button>
-
-                <mat-radio-button disabled="true" value="2" class="myriad example-radio-button">
-                    Um voucher para comprar no site
-                </mat-radio-button>
-
-                <mat-radio-button disabled="true" value="3" class="myriad example-radio-button">
-                    Quero o mesmo produto
-                </mat-radio-button>
-            </mat-radio-group>
-        </div>
-
-        <div class="motivo-devolucao">
-            <h2 class="myriad">Motivo da devolução</h2>
-            <textarea disabled="true" class="myriad" [(ngModel)]="formReadOnly.description" rows="4"></textarea>
-        </div>
-
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
-            <div fxFlex="49">
-                <button mat-raised-button class="w-100 mt-3" disabled="true" (click)="inputDialog.click()">
-                    <mat-icon *ngIf="arquivosEnviados">attach_file</mat-icon>{{formReadOnly.attachItems}}
-                    <span class="myriad" style="margin-left: 15px;">Anexar Evidências</span>
-                </button>
-
-
-                <input #inputDialog hidden="true" type="file" multiple (change)="contagemArquivos($event.target)" />
+    <div fxFlex="100" class="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutWrap>
+        <div fxLayout="column" fxFlex="50">
+            <div fxLayout="row" fxFlex fxLayoutAlign="center center">
+                <h1 class="myriad cinza">Produto</h1>
             </div>
-            <div fxFlex="49">
-                <button mat-raised-button color="primary" class="w-100 mt-3 myriad button-text" matStepperNext>Confirmar</button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-card fxFlex="80" fxFlex.xs="100" class="card">
+                    <mat-card-header>
+                        <mat-card-title><span class="title myriad"> {{ formReadOnly.product.name }}</span></mat-card-title>
+                    </mat-card-header>
+                    <img class="card-image" mat-card-image [src]="formReadOnly.product.picture" alt="...">
+                    <mat-card-content>
+                        <div>
+                            <mat-label class="myriad cinza">{{ formReadOnly.product.description }}</mat-label>
+                        </div>
+
+                    </mat-card-content>
+                    <div fxLayoutAlign="end end">
+                        <mat-label class="price cinza">
+                            <span class="myriad"> Preço: </span>
+                            <span class=" myriad">{{ formReadOnly.product.price }}</span>
+                        </mat-label>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="mt-20" fxLayout="row" fxFlex fxLayoutAlign="center center">
+                <span class="bold"></span>
+            </div>
+        </div>
+
+        <div fxFlex="50">
+            <div class="modo-devolucao">
+                <h2 class="myriad cinza">Modo de devolução</h2>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="mat-radio" [(ngModel)]="formReadOnly.modoDevolucao">
+                    <mat-radio-button disabled="true" value="1" class="myriad cinza example-radio-button">
+                        Loja física
+                    </mat-radio-button>
+
+                    <mat-radio-button disabled="true" value="2" class="myriad cinza example-radio-button">
+                        Transportadora
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div class="forma-reembolso">
+                <h2 class="myriad">Formas de reembolso</h2>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="formaReembolso" [(ngModel)]="formReadOnly.formaReembolso">
+                    <mat-radio-button disabled="true" value="1" class="myriad example-radio-button">
+                        Receber meu dinheiro de volta
+                    </mat-radio-button>
+
+                    <mat-radio-button disabled="true" value="2" class="myriad example-radio-button">
+                        Um voucher para comprar no site
+                    </mat-radio-button>
+
+                    <mat-radio-button disabled="true" value="3" class="myriad example-radio-button">
+                        Quero o mesmo produto
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div class="motivo-devolucao">
+                <h2 class="myriad">Motivo da devolução</h2>
+                <textarea disabled="true" class="myriad" [(ngModel)]="formReadOnly.description" rows="4"></textarea>
+            </div>
+
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
+                <div fxFlex="49">
+                    <button mat-raised-button class="w-100 mt-3" disabled="true" (click)="inputDialog.click()">
+                        <mat-icon *ngIf="arquivosEnviados">attach_file</mat-icon>{{formReadOnly.attachItems}}
+                        <span class="myriad" style="margin-left: 15px;">Anexar Evidências</span>
+                    </button>
+
+
+                    <input #inputDialog hidden="true" type="file" multiple (change)="contagemArquivos($event.target)" />
+                </div>
+                <div fxFlex="49">
+                    <button mat-raised-button class="w-100 mt-3 myriad button-text" matStepperNext>Confirmar</button>
+                </div>
             </div>
         </div>
     </div>

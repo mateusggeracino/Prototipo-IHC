@@ -1,7 +1,7 @@
 <div fxflex fxLayoutAlign="center center" fxLayout="column" class="mt-50">
     <div fxLayout="column" fxLayoutAlign="center center">
         <mat-label fxLayout="row" class="myrad cinza fz25">Estamos analisando o seu pedido de devolução do item abaixo.</mat-label>
-        <mat-label fxLayout="row" class="myrad cinza fz25 mt-10"> Em breve você receberá um e-mail com o resultado.</mat-label>
+        <mat-label fxLayout="row" class="strong myrad cinza fz25 mt-10"> Em breve você receberá um e-mail com o resultado.</mat-label>
     </div>
 
     <div class="etiqueta mt-50 myrad cinza">
@@ -18,5 +18,11 @@
         <div class="mt-10">
             <span class="ticket-title">Link: </span><span>https://bit.ly/2WaSqr4</span>
         </div>
+    </div>
+
+    <div class="my-30" fxFlex fxLayoutAlign="center center">
+        <button mat-fab class="button-back" (click)="reset()">
+            <mat-icon matSuffix>home</mat-icon>
+        </button>
     </div>
 </div>

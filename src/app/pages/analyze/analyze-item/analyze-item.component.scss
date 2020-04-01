@@ -7,14 +7,14 @@
 }
 
 .etiqueta {
-  border: 1px solid  #5d5d5d;
+  border: 1px solid #5d5d5d;
   border-radius: 15px;
   width: 300px;
   padding: 24px;
 }
 
 .ticket-title {
-    font-weight: bold;
+  font-weight: bold;
   letter-spacing: 0.14px;
 }
 
@@ -24,4 +24,20 @@
 
 .mt-10 {
   margin-top: 10px;
+}
+
+.my-30 {
+  margin: 30px 0;
+}
+
+button {
+  outline: none;
+}
+
+.button-back {
+  background-color: #4682b4;
+}
+
+.strong {
+  font-weight: bold;
 }

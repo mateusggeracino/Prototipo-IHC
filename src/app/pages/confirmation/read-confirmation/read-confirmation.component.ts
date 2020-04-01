@@ -33,4 +33,8 @@ export class ReadConfirmationComponent implements OnInit {
   contagemArquivos(event: any) {
     this.quantidadeArquivos += event.files.length;
   }
+
+  clearForm() {
+    this.formReadOnly = new Form();
+  }
 }

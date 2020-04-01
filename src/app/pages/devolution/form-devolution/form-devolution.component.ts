@@ -22,20 +22,6 @@ export class FormDevolutionComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private fb: FormBuilder) { }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(ContactVendorComponent, {
-      width: '500px',
-      data: { comment: this.formEdit.comment }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.formEdit.comment = result;
-      }
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
   ngOnInit(): void {
     if (!this.formEdit) {
       this.formEdit = new Form();

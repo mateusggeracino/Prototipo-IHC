@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Form } from '../../devolution/form-devolution/form-devolution.component';
 import { Product } from '../../myProduct/list-my-produts/list-my-produts.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-analyze-item',
@@ -9,6 +10,7 @@ import { Product } from '../../myProduct/list-my-produts/list-my-produts.compone
 })
 export class AnalyzeItemComponent implements OnInit {
   @Input() formReadOnly: Form = new Form();
+
   date: Date;
   enviando = true;
   constructor() { }
@@ -26,5 +28,9 @@ export class AnalyzeItemComponent implements OnInit {
       this.date = new Date();
       this.enviando = false;
     }, 40000);
+  }
+
+  reset() {
+    window.location.reload();
   }
 }
