@@ -1,4 +1,6 @@
-<div>
-    <h1>Sua solicitação de cancelamento foi enviado para o fornecedor</h1>
-    <button (click)="close()">Fechar</button>
+<div fxLayout="column">
+    <h3 fxLayout="row" class="myriad cinza">Sua solicitação de cancelamento foi enviada para o fornecedor. Em breve você receberá um email de retorno.</h3>
+    <div fxFlex="20" fxLayoutAlign="end end">
+        <button class="botao" mat-raised-button (click)="close()">Fechar</button>
+    </div>
 </div>
