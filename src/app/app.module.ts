@@ -27,6 +27,7 @@ import { SendMessageProviderComponent } from './pages/modals/send-message-provid
 import { ContactVendorComponent } from './pages/devolution/contact-vendor/contact-vendor.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import { CancelProductComponent } from './pages/modals/cancel-product/cancel-product.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     AnalyzeItemComponent,
     ViewProductComponent,
     SendMessageProviderComponent,
-    ContactVendorComponent
+    ContactVendorComponent,
+    CancelProductComponent
   ],
   imports: [
     MatRadioModule,

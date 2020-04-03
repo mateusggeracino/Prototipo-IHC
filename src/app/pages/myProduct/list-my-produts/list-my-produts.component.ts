@@ -3,12 +3,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { ViewProductComponent } from '../../modals/view-product/view-product/view-product.component';
 import { ContactVendorComponent } from '../../devolution/contact-vendor/contact-vendor.component';
 import { FormGroup } from '@angular/forms';
+import { CancelProductComponent } from '../../modals/cancel-product/cancel-product.component';
 
 
 export enum StatusEnum {
   Pago = 'Pago',
   Enviado = 'Enviado',
-  AguardandoPagamento = 'Aguardando Pagamento',
+  AguardandoPagamento = 'Aguardando Pagto',
   Entregue = 'Produto Entregue'
 }
 
@@ -101,15 +102,6 @@ export const PRODUCTS_DATA = [
     picture: 'https://www.superbonitacosmeticos.com.br' +
       '/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/s/escova-penteado-quiffl-preto.jpg',
     status: StatusEnum.Enviado
-  }, {
-    id: 4,
-    order: getRandomNumber(),
-    name: 'Óculos de Sol',
-    description: 'Cras sit amet sem purus. Fusce vulputate fringilla neque, quis tempus magna posuere id.',
-    price: 94.99,
-    picture: 'https://img-br.prvstatic.com/front/get/photo/162819_-' +
-      '_images_-_products_-_PLD7023-S_807_-_templ1.jpg',
-    status: StatusEnum.Entregue
   }
 ];
 
@@ -165,6 +157,14 @@ export class ListMyProdutsComponent implements OnInit {
     }
 
     this.products = products;
+    this.actualPage = 1;
+  }
+
+  cancel(product: Product) {
+    const dialogRef = this.dialog.open(CancelProductComponent, {
+      width: '350px',
+      data: { product }
+    });
   }
 
   getStatus(statusProduto: StatusEnum) {

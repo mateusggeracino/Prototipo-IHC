@@ -40,13 +40,12 @@
             <mat-card-title>
                 <span class="title myriad">
                     <div fxLayoutAlign="start center">
-                        <span matPrefix class="ball-status"
-                            [ngStyle]="{'background-color': getStatus(product.status).color }"></span>
                         {{ product.name }}
                     </div>
                 </span>
             </mat-card-title>
             <mat-card-subtitle><span class="title myriad">Pedido: {{ product.order }}</span></mat-card-subtitle>
+            <mat-card-subtitle>Status: {{getStatus(product.status).name}}</mat-card-subtitle>
         </mat-card-header>
         <img class="card-image" mat-card-image [src]="product.picture" alt="...">
         <mat-card-content>
@@ -63,18 +62,18 @@
         </div>
         <mat-card-actions fxLayout="column" fxLayoutGap="10px">
             <div fxFlex="20" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
-                <button [disabled]="product.status !== statusEntregue" mat-raised-button fxFlex="40"
-                    (click)="produtoSelecionado(product)" class="button-devolution button-text myriad"
-                    matStepperNext>Devolver</button>
+                <button mat-raised-button fxFlex="40" (click)="openDialog(product.id)"
+                    class="button-text button-provider myriad">Fornecedor</button>
                 <button mat-raised-button fxFlex="40" class="button-view button-text myriad"
                     (click)="viewProduct(product)">Visualizar</button>
             </div>
             <div fxFlex="20" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
-                <button mat-raised-button fxFlex="40" (click)="openDialog(product.id)"
-                    class="button-text button-provider myriad">Fornecedor</button>
+                <button [disabled]="product.status !== statusEntregue" mat-raised-button fxFlex="40"
+                    (click)="produtoSelecionado(product)" class="button-devolution button-text myriad"
+                    matStepperNext>Devolver</button>
                 <button [disabled]="!(product.status === statusPago || product.status === statusAguardandoPagamento)"
                     mat-raised-button fxFlex="40" class="button-view button-text myriad"
-                    (click)="viewProduct(product)">Cancelar</button>
+                    (click)="cancel(product)">Cancelar</button>
             </div>
         </mat-card-actions>
     </mat-card>
